@@ -1,0 +1,42 @@
+<div class="class">
+  <p>two-way-binding works!</p>
+
+  <form>
+    <input
+      type="text"
+      [(ngModel)]="name"
+      name="name"
+      placeholder="Nome"
+      (ngModelChange)="onChangeValue()"
+    />
+    <input type="submit" value="Enviar" />
+  </form>
+
+  @if (name) {
+  <p>O nome é: {{ name }}</p>
+  }
+
+  <h3>Editar seu perfil</h3>
+
+  <form>
+    <input
+      type="text"
+      placeholder="Seu nome"
+      [(ngModel)]="user.name"
+      name="name"
+    />
+    <input
+      type="text"
+      placeholder="Seu email"
+      [(ngModel)]="user.email"
+      name="email"
+    />
+    <input
+      type="text"
+      placeholder="Sua idade"
+      [(ngModel)]="user.age"
+      name="age"
+    />
+    <input type="submit" value="Enviar" (click)="onChangeUser()" />
+  </form>
+</div>
