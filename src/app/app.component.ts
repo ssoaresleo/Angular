@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { FirstComponentComponent } from './components/first-component/first-component.component';
 import {
   ParentDataComponent,
@@ -26,7 +26,8 @@ import { TwoWayBindingComponent } from './components/two-way-binding/two-way-bin
     EmitterComponent,
     ListRenderComponent,
     PipesComponent,
-    TwoWayBindingComponent
+    TwoWayBindingComponent,
+    RouterLink
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
