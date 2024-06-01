@@ -13,4 +13,7 @@ export class EmitterComponent {
   onChangeNumber() {
     this.myNumber = Math.floor(Math.random() * 10);
   }
+  onChangeNumberB() {
+    this.myNumber = Math.floor(Math.random() * 20);
+  }
 }
