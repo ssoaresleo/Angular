@@ -1,0 +1,15 @@
+<div class="class">
+  <p *ngIf="show">Exibindo mensagem!</p>
+  <div class="button-list">
+    <button (click)="showMessage()">Clique aqui!</button>
+    <button (click)="showNotification()">Exibir notificação</button>
+    <!-- <button #Out (mouseout)="onMouseOut(Out)">Tirar ponteiro</button>
+    <button #Enter (mouseenter)="onMouseEnter(Enter)">Colocar ponteiro</button> -->
+
+    <button #Out (mouseout)="onMouseOut(Out)">Tirar ponteiro</button>
+    <button #Enter (mouseenter)="onMouseEnter(Enter)">Colocar ponteiro</button>
+  </div>
+  <ul>
+    <li *ngFor="let name of names">{{ name }}</li>
+  </ul>
+</div>
