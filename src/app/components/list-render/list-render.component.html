@@ -1,0 +1,21 @@
+<div class="class">
+  <h2>Users:</h2>
+  <ul>
+    <!-- <li *ngFor="let user of users">{{ user.name }} - {{ user.email }}</li> -->
+    @for (user of users; track user) {
+    <li>{{ user.name }} - {{ user.email }}</li>
+    }
+
+    <h1>Lista de Produtos</h1>
+
+    <div class="list-products">
+      @for (product of products; track product) {
+      <app-product-card
+        [name]="product.name"
+        [description]="product.description"
+        [price]="product.price"
+      ></app-product-card>
+      }
+    </div>
+  </ul>
+</div>
