@@ -1,0 +1,13 @@
+<div class="class">
+  <div *ngIf="canShow; else notTrue">Quando for verdadeiro voçê está me vendo!</div>
+  <ng-template #notTrue>Quando não for verdadeiro eu vou estar aqui!</ng-template>
+  <h1
+    *ngIf="name === 'Leonardo'; else nameNotFound"
+    [ngStyle]="{ 'text-transform': 'uppercase' }"
+  >
+    Olá {{ name }}
+  </h1>
+  <ng-template #nameNotFound>
+    <h2>Nome não é Leonardo</h2>
+  </ng-template>
+</div>
