@@ -27,9 +27,15 @@ export class ListRenderComponent {
     { name: 'Otávio', email: 'otavio.g@gmail.com' },
   ];
 
+  userDetails = '';
+
   products: ProductProps[] = [
     { name: 'Teclado', description: 'Teclado para jogos', price: 200 },
     { name: 'Monitor', description: 'Monitor para jogos', price: 2300 },
     { name: 'Mouse', description: 'Mouse para jogos', price: 300 },
   ];
+
+  showEmail(user: UserProps) {
+    this.userDetails = `O email do usuário ${user.email} é ${user.email}`;
+  }
 }

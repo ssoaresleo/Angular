@@ -3,8 +3,14 @@
   <ul>
     <!-- <li *ngFor="let user of users">{{ user.name }} - {{ user.email }}</li> -->
     @for (user of users; track user) {
-    <li>{{ user.name }} - {{ user.email }}</li>
+    <li>
+      {{ user.name }} <button (click)="showEmail(user)">Show Email</button>
+    </li>
     }
+
+    <h3>
+      {{ userDetails }}
+    </h3>
 
     <h1>Lista de Produtos</h1>
 
