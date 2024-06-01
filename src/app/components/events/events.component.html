@@ -12,4 +12,6 @@
   <ul>
     <li *ngFor="let name of names">{{ name }}</li>
   </ul>
+  <h1>Change Number: {{ myNumber }}</h1>
+  <app-change-number (changeNumber)="onChangeNumber()"></app-change-number>
 </div>
