@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { ListService } from '../../services/list.service';
+import { HttpClientModule } from '@angular/common/http';
 
 export type UserProps = {
   name: string;
@@ -23,15 +24,19 @@ type ProductProps = {
   styleUrl: './list-render.component.scss',
 })
 export class ListRenderComponent implements OnInit {
-  constructor(private listService: ListService) {}
+  users: UserProps[] = [];
+
+  constructor(private listService: ListService) {
+    this.getUsers();
+  }
 
   ngOnInit(): void {}
 
-  users: UserProps[] = [
-    { name: 'John', email: 'john@gmail.com' },
-    { name: 'Helena', email: 'helena@gmail.com' },
-    { name: 'Otávio', email: 'otavio.g@gmail.com' },
-  ];
+  // users: UserProps[] = [
+  //   { name: 'John', email: 'john@gmail.com' },
+  //   { name: 'Helena', email: 'helena@gmail.com' },
+  //   { name: 'Otávio', email: 'otavio.g@gmail.com' },
+  // ];
 
   userDetails = '';
 
@@ -42,11 +47,15 @@ export class ListRenderComponent implements OnInit {
   ];
 
   showEmail(user: UserProps) {
-    this.userDetails = `O email do usuário ${user.name} é ${user.email}`;
+    this.userDetails = `O email do usuário  ${user.name} é ${user.email}`;
   }
 
   removeUser(user: UserProps) {
     console.log('Removendo usuário...');
     this.users = this.listService.remove(this.users, user);
+  }
+
+  getUsers() {
+    this.listService.getAll().subscribe((users) => (this.users = users));
   }
 }
