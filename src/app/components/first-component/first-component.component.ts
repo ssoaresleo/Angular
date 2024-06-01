@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
   templateUrl: './first-component.component.html',
   styleUrl: './first-component.component.scss',
 })
-export class FirstComponentComponent {}
+export class FirstComponentComponent {
+  name: string = 'Leonardo';
+  age: number = 30;
+  hobbies = ["correr", "jogar", "estudar"]
+}
