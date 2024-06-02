@@ -54,7 +54,8 @@ export class ListRenderComponent implements OnInit {
 
   removeUser(user: UserProps) {
     console.log('Removendo usuário...');
-    this.users = this.listService.remove(this.users, user);
+    this.users = this.users.filter((u) => user.name !== u.name);
+    this.listService.remove(user.id).subscribe();
   }
 
   getUsers() {

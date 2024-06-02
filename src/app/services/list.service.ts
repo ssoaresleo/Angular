@@ -25,8 +25,8 @@ export class ListService {
     return this.http.get<User>(this.apiUrl + `/${id}`);
   }
 
-  remove(users: UserProps[], user: UserProps) {
+  remove(id: number) {
     console.log('Service');
-    return users.filter((u) => user.name !== u.name);
+    return this.http.delete<User>(`${this.apiUrl}/${id}`);
   }
 }
