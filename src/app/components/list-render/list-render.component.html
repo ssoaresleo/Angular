@@ -4,7 +4,8 @@
     <!-- <li *ngFor="let user of users">{{ user.name }} - {{ user.email }}</li> -->
     @for (user of users; track user) {
     <li>
-      {{ user.name }} <button (click)="showEmail(user)">Show Email</button>
+      <a routerLink="/list/{{ user.id }}">{{ user.name }}</a>
+      <button (click)="showEmail(user)">Show Email</button>
       <button (click)="removeUser(user)">Excluir</button>
     </li>
     }

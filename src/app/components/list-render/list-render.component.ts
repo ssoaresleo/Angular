@@ -3,8 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { ListService } from '../../services/list.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
 
 export type UserProps = {
+  id: number;
   name: string;
   email: string;
 };
@@ -18,7 +20,7 @@ type ProductProps = {
 @Component({
   selector: 'app-list-render',
   standalone: true,
-  imports: [CommonModule, ProductCardComponent],
+  imports: [CommonModule, ProductCardComponent, RouterLink],
   providers: [ListService],
   templateUrl: './list-render.component.html',
   styleUrl: './list-render.component.scss',

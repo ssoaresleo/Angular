@@ -21,6 +21,10 @@ export class ListService {
     return this.http.get<User[]>(this.apiUrl);
   }
 
+  getItem(id: number): Observable<User> {
+    return this.http.get<User>(this.apiUrl + `/${id}`);
+  }
+
   remove(users: UserProps[], user: UserProps) {
     console.log('Service');
     return users.filter((u) => user.name !== u.name);

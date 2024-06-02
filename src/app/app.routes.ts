@@ -8,6 +8,7 @@ import { ParentDataComponent } from './components/parent-data/parent-data.compon
 import { PipesComponent } from './components/pipes/pipes.component';
 import { TwoWayBindingComponent } from './components/two-way-binding/two-way-binding.component';
 import { ChangeNumberComponent } from './components/change-number/change-number.component';
+import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 
 export const routes: Routes = [
   {
@@ -45,5 +46,9 @@ export const routes: Routes = [
   {
     path: 'changenumber',
     component: ChangeNumberComponent,
+  },
+  {
+    path: 'list/:id',
+    component: ItemDetailComponent,
   },
 ];
